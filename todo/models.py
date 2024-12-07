@@ -18,6 +18,7 @@ class Category (models.Model):
 class Project (models.Model):
   name= models.CharField(max_length=225, unique=True)
   slug= models.SlugField(max_length=225, unique=True, blank=True)
+  target_project_date= models.DateField()
   
   def save(self, *args, **kwargs):
     if not self.slug:
@@ -26,7 +27,6 @@ class Project (models.Model):
 
   def __str__(self):
     return self.slug
-
 
 class Task (models.Model):
   name= models.CharField(max_length=225)

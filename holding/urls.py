@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from todo.views import index_view, ProjectCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index_view, name='index'),
+    path('project-create/', ProjectCreateView.as_view(), name='project-create'),
 ]
