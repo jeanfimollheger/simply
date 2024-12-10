@@ -8,6 +8,8 @@
   <body>
     <h1>Hello world</h1>
     <h6>please wait ...</h6>
+    <a href="{% url 'index' %}">Accueil</a>
+    <a href="{% url 'project-create' %}">Créer un nouveau projet</a>
     {% block content %} {% endblock %}
   </body>
 </html>

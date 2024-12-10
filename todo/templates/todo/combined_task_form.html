@@ -1,0 +1,31 @@
+{% extends 'index.html' %} {% block content %}
+<a href="{% url 'index' %}">Accueil</a>
+<form method="post">
+  {% csrf_token %}
+  <ul>
+    {{ form.as_p }}
+  </ul>
+  <button type="submit">Valider</button>
+</form>
+<h1>Les catégories</h1>
+<ul>
+  {% for object in categories_list %}
+  <li>{{ object.name }} - {{ object.id }}</li>
+  {% endfor %}
+</ul>
+
+<h1>Les projets</h1>
+<ul>
+  {% for object in projects_list %}
+  <li>{{ object.name }} - {{ object.id }}</li>
+  {% endfor %}
+</ul>
+
+<h1>Les tâches</h1>
+<ul>
+  {% for object in projects_list %}
+  <li>{{ object.name }} - {{ object.id }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

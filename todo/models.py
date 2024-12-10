@@ -1,5 +1,11 @@
 from django.db import models
 from django.utils.text import slugify
+from datetime import date, timedelta
+
+# fonctions à disposition
+def get_default_target_date():
+  date.today() + timedelta(days=45)
+
 
 # Create your models here.
 class Category (models.Model):
@@ -18,7 +24,7 @@ class Category (models.Model):
 class Project (models.Model):
   name= models.CharField(max_length=225, unique=True)
   slug= models.SlugField(max_length=225, unique=True, blank=True)
-  target_project_date= models.DateField()
+  target_project_date= models.DateField(default=get_default_target_date)
   
   def save(self, *args, **kwargs):
     if not self.slug:
