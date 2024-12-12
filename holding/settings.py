@@ -123,7 +123,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Dossiers où Django recherche les fichiers statiques en mode développement
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Dossier global pour les fichiers statiques partagés
+    BASE_DIR / 'todo/static',  # Dossier global pour les fichiers statiques partagés
 ]
 
 
