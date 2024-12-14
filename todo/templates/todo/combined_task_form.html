@@ -1,36 +1,42 @@
-{% extends 'index.html' %} {% load static %} <link rel="stylesheet" href="{% static 'todo/style.css' %}" /> {% block content %}
-<a href="{% url 'index' %}">Accueil</a>
-<main>
-  <div class="flexbox">
-    <h2>La nouvelle tâche ?!</h2>
-    {% csrf_token %}
-    <ul>
-      {{ form.as_p }}
-    </ul>
-    <button type="submit">Valider</button>
+{% extends 'index.html' %} {% load static %}
+<link rel="stylesheet" href="{% static 'todo/style.css' %}" />
+{% block content %}
+<!-- <a href="{% url 'index' %}">Accueil</a> -->
+
+<div class="grid">
+  <h2>La nouvelle tâche ?!</h2>
+  <div class="grid-container">
+    <form method="post">
+      {% csrf_token %}
+      <ul>
+        {{ form.as_p }}
+      </ul>
+      <button type="submit">Valider</button>
     </form>
-    <h2>Les catégories</h2>
-    <ul>
-      {% for object in categories_list %}
-      <li>{{ object.id }} - {{ object.name }}</li>
-      {% endfor %}
-      <form method="post">
-    </ul>
-    
-    <h2>Les projets</h2>
-    <ul>
-      {% for object in projects_list %}
-      <li>{{ object.id }} - {{ object.name }}</li>
-      {% endfor %}
-    </ul>
-    
-    <h2>Les tâches</h2>
-    <ul>
-      {% for object in projects_list %}
-      <li>{{ object.id }} - {{ object.name }}</li>
-      {% endfor %}
-    </ul>
+    <div class="sub-grid-container">
+      <h2>Les catégories</h2>
+      <ul>
+        {% for object in categories_list %}
+        <li>{{ object.id }} - {{ object.name }}</li>
+        {% endfor %}
+      </ul>
+
+      <h2>Les projets</h2>
+      <ul>
+        {% for object in projects_list %}
+        <li>{{ object.id }} - {{ object.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="sub-grid-container">
+      <h2>Les tâches</h2>
+      <ul>
+        {% for object in tasks_list %}
+        <li>{{ object.id }} - {{ object.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
-</main>
+</div>
 
 {% endblock %}

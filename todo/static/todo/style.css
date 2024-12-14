@@ -31,14 +31,28 @@ h2 {
   font-style: normal;
 }
 
+input,
+button {
+  border-radius: 5px;
+}
+
+.flexbox a {
+  margin: 2.5px;
+}
+
 main {
-  height: 900px;
+  min-height: 200px;
   width: 90%;
   /* marges de 0 en haut et bas et auto à gauche et droite (centrée horizontalement) */
   /* en mettant 4 valeurs c'est haut-gauche, haut-droit, bas-droit, bas-gauche */
   margin: 0 0 5 25;
   background: grey;
-  border: 2px solid;
+  border: 0.5px solid;
   border-radius: 15px;
   padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 26% 20% 54%;
 }

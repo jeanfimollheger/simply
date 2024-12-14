@@ -11,16 +11,18 @@
   <body>
     <h1>Hello world ...</h1>
     <h6>please wait ... in progress</h6>
-    <a href="{% url 'index' %}">Accueil</a>
-    <a href="{% url 'project-create' %}">Créer un nouveau projet</a>
-    <a href="{% url 'task-create' %}">Créer une tâche</a>
+    <div class="flexbox">
+      <a href="{% url 'index' %}">Accueil</a>
+      <a href="{% url 'project-create' %}">Créer un nouveau projet</a>
+      <a href="{% url 'task-create' %}">Créer une tâche</a>
+    </div>
 
-    {% block content %}
     <main>
-      <div class="flexbox">
+      {% block content %}
+      <div>
         <h2>Pour voir où je suis</h2>
       </div>
+      {% endblock %}
     </main>
-    {% endblock %}
   </body>
 </html>

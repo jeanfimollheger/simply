@@ -3,6 +3,7 @@
 {% block content %}
 <h2>a new horror project !?</h2>
 <!-- <a href="{% url 'index' %}">Accueil</a> -->
+
 <form method="post">
   {% csrf_token %}
   <ul>
@@ -10,4 +11,5 @@
   </ul>
   <button type="submit">Valider</button>
 </form>
+
 {% endblock %}
