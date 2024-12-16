@@ -18,7 +18,7 @@ class Category (models.Model):
     super().save(*args, **kwargs)
 
   def __str__(self):
-    return self.slug
+    return f"{self.id} - {self.slug}"
 
 
 class Project (models.Model):
@@ -32,7 +32,7 @@ class Project (models.Model):
     super().save(*args, **kwargs)
 
   def __str__(self):
-    return self.slug
+    return f"{self.id} - {self.slug}"
 
 class Task (models.Model):
   name= models.CharField(max_length=225)

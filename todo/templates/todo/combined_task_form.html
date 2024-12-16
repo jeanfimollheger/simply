@@ -22,6 +22,8 @@
       </ul>
 
       <h2>Les projets</h2>
+      <h6>un projet te manque et la terre est dépeuplée ...</h6>
+      <a href="{% url 'project-create' %}">Créer un nouveau projet</a>
       <ul>
         {% for object in projects_list %}
         <li>{{ object.id }} - {{ object.name }}</li>
