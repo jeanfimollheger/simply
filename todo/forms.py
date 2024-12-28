@@ -7,6 +7,16 @@ class ProjectCreateForm(forms.ModelForm):
     fields = ['name', 'target_project_date']
 
 
+
+class ProjectTasksListForm(forms.Form):
+  project= forms.ModelChoiceField(
+    queryset=Project.objects.all(),
+    widget=forms.RadioSelect(),
+    label="Choisis un projet"
+  )
+
+
+
 class TaskCreateForm(forms.ModelForm):
   class Meta:
     model= Task

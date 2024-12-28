@@ -4,11 +4,9 @@
 <h2>a new horror project !?</h2>
 <!-- <a href="{% url 'index' %}">Accueil</a> -->
 
-<form method="post">
-  {% csrf_token %}
-  <ul>
-    {{ form.as_p }}
-  </ul>
+<form method="POST">
+  {% csrf_token %} {{ form.as_p }}
+
   <button type="submit">Valider</button>
 </form>
 
